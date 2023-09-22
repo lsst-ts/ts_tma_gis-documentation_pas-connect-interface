@@ -161,17 +161,34 @@
 
 This document contains the signals communicated between the different CPUs that make up the telescope\'s safety system.
 
+```plantuml
+@startuml
+skinparam componentStyle rectangle
+
+component GIS
+component M1M3
+component DOME
+component TMA
+component AUX
+
+GIS <-d-> M1M3
+GIS <-d-> DOME
+GIS <-d-> TMA
+GIS <-d-> AUX
+@enduml
+```
+
 The safety CPUs in the telescope are:
 
--   GIS, central controller
+- GIS, central controller
 
--   TMA-IS
+- TMA-IS
 
--   M1M3-IS
+- M1M3-IS
 
--   DOME_IS
+- DOME_IS
 
--   AUX-IS
+- AUX-IS
 
 This interface has been made based on the I/O map defined in the GIS Table_v_4.xlsx, included in 092-308-E-Z_0004
 document.
@@ -246,59 +263,59 @@ communication between the subsystem controllers is not contemplated.
 
 Inputs to GIS
 
--   GIS_D_7 TMA brakes NOT engaged
+- GIS_D_7 TMA brakes NOT engaged
 
--   GIS_D_8 Camera cable wrap safety device activated
+- GIS_D_8 Camera cable wrap safety device activated
 
--   GIS_D_9 TMA ETPBs
+- GIS_D_9 TMA ETPBs
 
--   GIS_D_17 Failed MCS watchdog or MCS loss communication
+- GIS_D_17 Failed MCS watchdog or MCS loss communication
 
 Output from GIS:
 
--   GIS_A_3 TMA Discharge Capacitors bank
+- GIS_A_3 TMA Discharge Capacitors bank
 
--   GIS_A_4 TMA Disable other equipment
+- GIS_A_4 TMA Disable other equipment
 
--   GIS_A_5 TMA main drives, STO and engage the brakes
+- GIS_A_5 TMA main drives, STO and engage the brakes
 
--   GIS_A_6 Camera cable wrap drives STO
+- GIS_A_6 Camera cable wrap drives STO
 
 ### ICD GIS-M1M3
 
 Inputs to GIS
 
--   GIS_D_18 M1M3 Interlock
+- GIS_D_18 M1M3 Interlock
 
 Output from GIS:
 
--   GIS_A_18 M1M3 drives STO with Earthquake signal
+- GIS_A_18 M1M3 drives STO with Earthquake signal
 
--   GIS_A_19 M1M3 drives STO with Emergency stop
+- GIS_A_19 M1M3 drives STO with Emergency stop
 
 ### ICS GIS-DOME
 
 Inputs to GIS
 
--   GIS_D_10 Dome Locking Pin retracted or Dome Rear Door Louvers NOT closed
+- GIS_D_10 Dome Locking Pin retracted or Dome Rear Door Louvers NOT closed
 
--   GIS_D_11 Dome Rear doors are NOT closed
+- GIS_D_11 Dome Rear doors are NOT closed
 
--   GIS_D_12 Dome ETPBs
+- GIS_D_12 Dome ETPBs
 
--   GIS_D_13 Dome Crane not parkerd
+- GIS_D_13 Dome Crane not parkerd
 
 Output from GIS:
 
--   GIS_A_7 Dome shutter and Windscreen drives STO or Disable
+- GIS_A_7 Dome shutter and Windscreen drives STO or Disable
 
--   GIS_A_8 Dome crane drives STO or Disable
+- GIS_A_8 Dome crane drives STO or Disable
 
--   GIS_A_9 Dome Louvers and Dome Locking pin drives STO or Disable
+- GIS_A_9 Dome Louvers and Dome Locking pin drives STO or Disable
 
--   GIS_A_10 Dome Rear Doors drives STO or Disable
+- GIS_A_10 Dome Rear Doors drives STO or Disable
 
--   GIS_A_11 Dome Azimuth drives STO or Disable
+- GIS_A_11 Dome Azimuth drives STO or Disable
 
 ### ICS GIS-AUX-TEL
 
@@ -309,4 +326,4 @@ variable. In this case the ICD could be defined as,
 
 Output from GIS:
 
--   GIS_A_22 Auxiliar telescope general STO
+- GIS_A_22 Auxiliar telescope general STO
