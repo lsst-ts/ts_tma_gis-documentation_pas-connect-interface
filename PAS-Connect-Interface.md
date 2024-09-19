@@ -49,22 +49,6 @@
 </tbody>
 </table>
 
-## Index
-
-1\. Introduction [4](#introduction)
-
-2\. Reference document list [6](#reference-document-list)
-
-3\. Communication GIS-Subsystems controller [6](#communication-gis-subsystems-controller)
-
-3.1 ICD GIS-TMA [6](#icd-gis-tma)
-
-3.2 ICD GIS-M1M3 [7](#icd-gis-m1m3)
-
-3.3 ICS GIS-DOME [7](#ics-gis-dome)
-
-3.4 ICS GIS-AUX-TEL [7](#ics-gis-aux-tel)
-
 ## Document history
 
 <table>
@@ -161,7 +145,7 @@
 
 This document contains the signals communicated between the different CPUs that make up the telescope\'s safety system.
 
-```plantuml
+```{uml}
 @startuml
 skinparam componentStyle rectangle
 
